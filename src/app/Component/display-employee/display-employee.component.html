@@ -1,0 +1,114 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10">
+      <h2 class="text">User Records</h2>
+    </div>
+    <div class="col-md-2">
+      <button class="btn btn-primary adduser" data-toggle="modal" data-target="#myModal">Add New</button>
+    </div>
+  </div>
+  <!-- Display Table -->
+  <div class="row">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Avatar</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Experience</th>
+          <th>Remove</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of emploeeInformation">
+          <td><i class="fa fa-user-circle-o" style="font-size:48px;color:red"></i></td>
+          <td>{{data.Name}}</td>
+          <td>{{data.email}}</td>
+          <td>{{data.Experience}}</td>
+          <td (click)="remove(data.id)" class="remove"><i class="fa fa-times" style="font-size:20px"></i> Remove</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Display Modal Popup -->
+<div>
+  <div class="modal" id="myModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+
+        <div>
+          <div class="col-md-4 offset-md-4">
+            <h4 class="modal-title">Add new record</h4>
+          </div>
+        </div>
+
+        <div class="modal-body">
+          <form name="form" (ngSubmit)="f.form.valid && onSubmit(f.value,f)" #f="ngForm" novalidate>
+            <div class="form-group">
+              <div class="row">
+                <label for="lastName" class="col-md-2">Name</label>
+                <div class="col-md-9 offset-md-1">
+                  <input type="text" class="form-control inputname" name="Name" [(ngModel)]="model.Name" #Name="ngModel"
+                    required />
+                </div>
+              </div>
+
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <label for="email" class="col-md-2">Email</label>
+                <div class="col-md-9 offset-md-1">
+                  <input type="text" class="form-control inputemail" name="email" [(ngModel)]="model.email"
+                    #email="ngModel" required email />
+                </div>
+              </div>
+            </div>
+            <div className="form-group">
+              <div class="row">
+                <label for="date">Date of Joining:</label>
+                <div class="col-md-4">
+                  <input type="date" className="form-control" id="dateofjoining" name="dateofjoining"
+                    [(ngModel)]="model.dateofjoining" #dateofjoining="ngModel" required />
+                </div>
+              </div>
+            </div>
+            <div className="form-group">
+              <div class="row">
+                <label for="date">Date of Leaving:</label>
+                <div class="col-md-4">
+                  <input type="date" className="form-control" id="dateofleaving" name="dateofleaving"
+                    [(ngModel)]="model.dateofleaving" #dateofleaving="ngModel" required />
+                </div>
+                <div class="col-md-4">
+                  <div class="form-check">
+                    <label class="form-check-label" for="check1">
+                      <input type="checkbox" class="form-check-input" id="working" name="working"
+                        [(ngModel)]="model.working" #working="ngModel" value="Still Working">Still Working
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div className="form-group">
+                <div class="row">
+                  <label for="image">Upload Image :</label>
+                  <input type="file" id="file" accept=".jpg, .png, .jpeg" (change)='getoutput($event)'
+                    style="display:none;">
+                  <i class="fa fa-upload"  id="buttonFile"></i><span
+                    class="filename">{{ fileData }}</span>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-primary col-md-4 offset-md-4 submit">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

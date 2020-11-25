@@ -1,0 +1,76 @@
+/* .heading {
+    padding: 20px;
+} */
+
+.remove {
+    cursor: pointer;
+}
+
+.modal-title {
+    font-size: 25px;
+    font-family: auto;
+    margin-top: 20px;
+}
+
+#dateofjoining, #dateofleaving, #buttonFile {
+    margin-left: 12px;
+}
+
+.inputname, .inputemail {
+    width: 93%;
+    margin-left: 43px;
+}
+
+#buttonFile {
+    margin-left: 54px;
+    font-size:20px;
+    color:red;
+    margin-left:34px
+}
+
+.filename {
+    margin-left: 20px;
+}
+
+label {
+    padding-left: 40px;
+}
+
+.row {
+    margin-top: 20px;
+}
+
+.submit {
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.adduser{
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 20px;
+}
+
+.text{
+    margin-top:10px;
+    font-family: auto;
+}
+
+.valid{
+    margin-left: 42px;
+}
+
+#working{
+    margin-top: 8px;
+}
+
+.form-check{
+    margin-top: 7px;
+}
+
+/* #file{
+    display: none;
+} */
